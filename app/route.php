@@ -18,4 +18,7 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
     'login' => 'bg/index/login',
+    'logout' => 'bg/index/logout',
+    'right' => 'bg/index/right',
+    'index' => 'bg/index/index',
 ];

@@ -23,12 +23,12 @@
 <script type="text/javascript" src="/static/js/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>H-ui.admin v2.1</title>
-<meta name="keywords" content="H-ui.admin v2.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
-<meta name="description" content="H-ui.admin v2.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+<title>{$info.username}个人博客</title>
+<meta name="keywords" content="个人博客">
+<meta name="description" content="个人博客">
 </head>
 <body style="overflow:hidden">
-<header class="Hui-header cl"> <a class="Hui-logo l" title="H-ui.admin v2.1" href="/">H-ui.admin</a> <a class="Hui-logo-m l" href="/" title="H-ui.admin">H-ui</a> <span class="Hui-subtitle l">V2.1</span> <span class="Hui-userbox"><span class="c-white">超级管理员：admin</span> <a class="btn btn-danger radius ml-10" href="/bg/index/logout" title="退出"><i class="icon-off"></i> 退出</a></span> <a aria-hidden="false" class="Hui-nav-toggle" id="nav-toggle" href="#"></a> </header>
+<header class="Hui-header cl"> <a class="Hui-logo l" title="{$info.username}个人博客" href="/">{$info.username}个人博客</a> <a class="Hui-logo-m l" href="/" title="H-ui.admin">H-ui</a> <span class="Hui-subtitle l">V2.1</span> <span class="Hui-userbox"><span class="c-white">用户: {$info.username}</span> <a class="btn btn-danger radius ml-10" href="/logout" title="退出"><i class="icon-off"></i> 退出</a></span> <a aria-hidden="false" class="Hui-nav-toggle" id="nav-toggle" href="#"></a> </header>
 <div class="cl Hui-main">
   <aside class="Hui-aside" style="">
     <input runat="server" id="divScrollValue" type="hidden" value="" />
@@ -139,7 +139,7 @@
     <div id="Hui-tabNav" class="Hui-tabNav">
       <div class="Hui-tabNav-wp">
         <ul id="min_title_list" class="acrossTab cl">
-          <li class="active"><span title="我的桌面" data-href="welcome.html">我的桌面</span><em></em></li>
+          <li class="active"><span title="我的桌面" data-href="/right.html">我的桌面</span><em></em></li>
         </ul>
       </div>
       <div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default btn-small" href="javascript:;"><i class="icon-step-backward"></i></a><a id="js-tabNav-next" class="btn radius btn-default btn-small" href="javascript:;"><i class="icon-step-forward"></i></a></div>
@@ -147,7 +147,7 @@
     <div id="iframe_box" class="Hui-articlebox">
       <div class="show_iframe">
         <div style="display:none" class="loading"></div>
-        <iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+        <iframe scrolling="yes" frameborder="0" src="/right"></iframe>
       </div>
     </div>
   </section>
