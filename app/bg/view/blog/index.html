@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/static/js/html5.js"></script>
+<script type="text/javascript" src="/static/js/respond.min.js"></script>
+<script type="text/javascript" src="/static/js/PIE_IE678.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="/static/css/H-ui.css"/>
+<link type="text/css" rel="stylesheet" href="/static/css/H-ui.admin.css"/>
+<link type="text/css" rel="stylesheet" href="/static/font/font-awesome.min.css"/>
+<!--[if IE 7]>
+<link href="/static/font/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<title>博客列表</title>
+</head>
+<body>
+<nav class="Hui-breadcrumb"><i class="icon-home"></i> 首页 <span class="c-gray en">&gt;</span> 博客管理<span class="c-gray en">&gt;</span> 博客列表<a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="icon-refresh"></i></a></nav>
+<div class="pd-20">
+    <div class="text-c">
+        <form class="Huiform" method="post" action="" target="_self">
+            <input type="text" placeholder="分类名称" value="" class="input-text" style="width:120px">
+            <input type="text" class="input-text upload-url" placeholder="品牌LOGO">
+            <span class="btn-upload"><a class="btn btn-default radius" href="javascript:void();" style="z-index:2;">浏览</a><input type="file" class="input-file" id="" name="" multiple></span>
+            <select class="select" name="brandclass" size="1" style="width:120px">
+                <option value="1" selected>国内品牌</option>
+                <option value="0">国外品牌</option>
+            </select>
+            <input type="button" class="btn radius btn-primary" value="添加品牌">
+        </form>
+    </div>
+ <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="/bg/blog/index" onClick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+    <table class="table table-border table-bordered table-bg table-sort">
+        <thead>
+            <tr class="text-c">
+                <th width="25"><input type="checkbox" name="" value=""></th>
+                <th width="200">标题</th>
+                <th width="80">作者</th>
+                <th width="80">分类</th>
+                <th width="70">操作</th>
+            </tr>
+        </thead>
+        {foreach name='info' item='val' key='k'}
+        <tbody>
+            <tr class="text-c">
+                <td>{$k+1}</td>
+                <td>{$val['title']}</td>
+                <td>{$val['author']}</td>
+                <td>{$val['category']}</td>
+                <td class="f-14 product-brand-manage"><a style="text-decoration:none" href="/bg/blog/edit?id={$val['id']}"><i class="icon-edit"></i></a> <a style="text-decoration:none" class="delete"  title="删除" href="/bg/blog/delete?id={$val['id']}"><i class="icon-trash"></i></a></td>
+            </tr>
+        </tbody>
+        {/foreach}
+    </table>
+    {$page}
+</div>
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="layer/layer.min.js"></script>
+<script type="text/javascript" src="/static/js/pagenav.cn.js"></script>
+<script type="text/javascript" src="plugin/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/static/js/H-ui.js"></script>
+<script type="text/javascript" src="/static/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+        $(".delete").click(function(){
+            var $res = confirm("是否确定删除");
+            if (r==true){
+                return true;
+            }else{
+                return false;
+            }
+        });
+</script>
+</body>
+</html>

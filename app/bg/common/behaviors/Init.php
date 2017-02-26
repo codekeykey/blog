@@ -17,7 +17,7 @@ class Init {
         define('IS_POST', $request->isPost());
         define('IS_AJAX', $request->isAjax());
 
-        if(session('user') == null && ACTION_NAME != 'login') {
+        if(session('user') == null && ACTION_NAME != 'login' && MODULE_NAME != 'fg') {
             header('Location: /login');
         }
     }
