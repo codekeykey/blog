@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `category` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '类别',
   `title` varchar(128) NOT NULL DEFAULT '' COMMENT '博客标题',
   `content` varchar(10192) NOT NULL DEFAULT '' COMMENT '博客正文',
+  `image`   varchar(512) NOT NULL DEFAULT '' COMMENT '图片位置',
   `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `update_time` int(10) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY(`id`),

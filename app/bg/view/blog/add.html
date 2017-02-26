@@ -22,7 +22,7 @@
 <body>
 <div class="pd-20">
     <div class="Huiform">
-        <form action="/bg/Blog/add" method="post">
+        <form action="/bg/Blog/add" method="post" enctype="multipart/form-data">
             <table class="table table-bg">
                 <tbody>
                     <tr>
@@ -38,11 +38,15 @@
                     <tr>
                         <th class="text-r">博客：</th>
                         <td><textarea class="input-text" name="content" id="user-info" style="height:500px;width:700px;"></textarea></td>
-                        <td><span style="color:red">{$error['cotent']?=$error['content']}</span></td>
+                        <td><span style="color:red">{$error['content']?=$error['content']}</span></td>
                     </tr>
                     <tr>
                         <th class="text-r"></th>
                         <td align='center'><span style="color:red">{$info?=$info}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="text-r">请选择上传文件：</th>
+                        <td><input type="file" name="image"/></td>
                     </tr>
                     <tr>
                         <th></th>

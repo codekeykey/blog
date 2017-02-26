@@ -74,7 +74,7 @@
       <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
       {for start='0' end='7'}
       <div class="blogs">
-        <figure><img src="/static/images/01.jpg"></figure>
+        <figure><img src="{$Think.const.DS}uploads{$Think.const.DS}{$info[$i]['image']}"></figure>
         <ul>
           <h3><a href="/">{$info[$i]['title']}</a></h3>
           <p>{$info[$i]['content']|mb_substr=###,0,130}..</p>

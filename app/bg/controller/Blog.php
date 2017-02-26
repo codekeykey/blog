@@ -24,6 +24,9 @@ class Blog extends controller{
             $data = input('post.', '');
             $validate = new \think\Validate($rule);
             $validate->batch(true);
+            $upload = new \library\api\Upload();
+            $image = $upload->image();
+            $data['image'] = $image;
             if (!$validate->check($data)) {
                 $this->assign('error', $validate->getError());
             } else{
