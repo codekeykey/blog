@@ -1,0 +1,56 @@
+{layout name="layout"}
+<article>
+  <div class="l_box f_l">
+    <div class="banner">
+      <div id="slide-holder">
+        <div id="slide-runner"> <a href="/" target="_blank"><img id="slide-img-1" src="{$Think.const.DS}uploads{$Think.const.DS}{$info['image']}"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-2" src="{$Think.const.DS}uploads{$Think.const.DS}{$info['image']}"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-3" src="{$Think.const.DS}uploads{$Think.const.DS}{$info['image']}"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-4" src="{$Think.const.DS}uploads{$Think.const.DS}{$info['image']}"  alt="" /></a>
+          <div id="slide-controls">
+            <p id="slide-client" class="text"><strong></strong><span></span></p>
+            <p id="slide-desc" class="text"></p>
+            <p id="slide-nav"></p>
+          </div>
+        </div>
+      </div>
+      <script>
+	  if(!window.slider) {
+		var slider={};
+	}
+
+	slider.data= [
+    {
+        "id":"slide-img-1", // 与slide-runner中的img标签id对应
+        "client":"{$info['title']}",
+        "desc":"" //这里修改描述
+    },
+    {
+        "id":"slide-img-2",
+        "client":"{$info['title']}",
+        "desc":""
+    },
+    {
+        "id":"slide-img-3",
+        "client":"{$info['title']}",
+        "desc":""
+    },
+    {
+        "id":"slide-img-4",
+        "client":"{$info['title']}",
+        "desc":""
+    }
+	];
+
+	  </script>
+    </div>
+    <!-- banner代码 结束 -->
+    <div class="topnews">
+      <h2><span><a href="/" target="_blank">{$info['tag']}</a></span><b>文章</b>详情</h2>
+      <div class="blogs">
+        <figure><img src="{$Think.const.DS}uploads{$Think.const.DS}{$info['image']}"></figure>
+        <ul><p style="font-size:15px"><strong>{$info['title']}</strong></p></ul>
+        <ul>
+          <p>{$info['content']}</p>
+          <p class="autor"><span class="lm f_l"><a href="/">{$info['tag']}</a></span><span class="dtime f_l">{$info['create_time']|date="Y-m-d",###}</span><span class="viewnum f_r">浏览（<a href="/">{$info['times']}</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+        </ul>
+      </div>
+    </div>
+  </div>

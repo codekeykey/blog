@@ -17,13 +17,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `author` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '作者',
-  `category` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '类别',
+  `tag` varchar(32) NOT NULL DEFAULT '' COMMENT '标签',
   `title` varchar(128) NOT NULL DEFAULT '' COMMENT '博客标题',
   `content` varchar(10192) NOT NULL DEFAULT '' COMMENT '博客正文',
-  `image`   varchar(512) NOT NULL DEFAULT '' COMMENT '图片位置',
+  `image`  varchar(512) NOT NULL DEFAULT '' COMMENT '图片位置',
+  `times` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '访问次数',
   `create_time` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `update_time` int(10) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY(`id`),
   KEY `base_user_idx_1` (`author`) USING BTREE,
-  KEY `base_user_idx_2` (`category`) USING BTREE
+  KEY `base_user_idx_2` (`title`) USING BTREE
 ) ENGINE=Innodb DEFAULT CHARSET=utf8 COMMENT='博客表';

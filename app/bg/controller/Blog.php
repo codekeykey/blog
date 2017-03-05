@@ -18,7 +18,8 @@ class Blog extends controller{
     public function add() {
         $rule = [
             ['title', 'require', '标题必须有'],
-            ['content', 'require', '内容必须有']
+            ['content', 'require', '内容必须有'],
+            ['tag', 'require', '标签必须有']
         ];
         if (IS_POST) {
             $data = input('post.', '');
@@ -65,6 +66,10 @@ class Blog extends controller{
         } else {
             $data = input('post.', '');
             $data['update_time'] = time();
+            $upload = new \library\api\Upload();
+            $image = $upload->image();
+            $image == -1 && $this->assign("info", '修改失败');
+            $data['image'] = $image;
             if (\think\Db::Table('blog')->update($data)) {
                 $this->success("修改".$data['id']."成功", '/bg/blog/index');
             } else {

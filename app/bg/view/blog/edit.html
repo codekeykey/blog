@@ -22,7 +22,7 @@
 <body>
 <div class="pd-20">
     <div class="Huiform">
-        <form action="/bg/Blog/edit" method="post">
+        <form action="/bg/Blog/edit" method="post" enctype="multipart/form-data">
             <table class="table table-bg">
                 <tbody>
                     <tr>
@@ -31,15 +31,17 @@
                         <td><input type="text" style="width:200px" class="input-text"  placeholder="" id="title" name="title" datatype="*2-16" value="{$data['title']}"></td><td><span style="color:red">{$error['title']?=$error['title']}</span></td>
                     </tr>
                     <tr>
-                        <th class="text-r">类别：</th>
-                        <td><select id="sel-dept" name='category'  class="select-select2">
-                            <option value='0'>请选择</option>
-                        </select></td>
+                        <th class="text-r">标签：</th>
+                        <td><input type="text" style="width:200px" class="input-text"  placeholder="" id="tag" name="tag" datatype="*2-16" value="{$data['tag']}"></td><td><span style="color:red">{$error['tag']?=$error['tag']}</span></td>
                     </tr>
                     <tr>
                         <th class="text-r">博客：</th>
                         <td><textarea class="input-text" name="content" id="user-info" style="height:500px;width:700px;" >{$data['content']}</textarea></td>
                         <td><span style="color:red">{$error['cotent']?=$error['content']}</span></td>
+                    </tr>
+                    <tr>
+                        <th class="text-r">图片：</th>
+                        <td><image width="100px" height="100px" src="{$Think.const.DS}uploads{$Think.const.DS}{$data['image']}"><input type="file" name="image"/></td>
                     </tr>
                     <tr>
                         <th class="text-r"></th>

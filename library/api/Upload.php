@@ -6,7 +6,9 @@ class Upload {
 
     public function image() {
         $file = request()->file('image');
-        !$file && $this->error('没有上传任何文件');
+        if(!$file){
+            return -1;
+        }
         try {
             $rule = function (\Think\File $file) {
                 return date('Y-m-d') . DS . $file->hash('md5');
@@ -15,7 +17,7 @@ class Upload {
             if (!$upload) throw new \Exception($file->getError());
             return $upload->getSaveName();
         } catch (Exception $e) {
-            $this->error($e->getMessage());
+            return $this->error($e->getMessage());
         }
 
     }

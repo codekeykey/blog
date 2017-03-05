@@ -11,5 +11,22 @@ class Index extends controller {
         $this->assign('info', $data);
         return $this->fetch();
     }
+
+
+    public function detail(){
+        !IS_GET && $this->redirect("/fg/index/index");
+        $id = input('get.id', 0);
+        $data = \think\Db::Table('blog')->find($id);
+        $user = \think\Db::Table('admin')->find();
+        $data['times']+=1;
+        try {
+            \think\Db::table('blog')->update($data);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+        $this->assign('user', $user);
+        $this->assign('info', $data);
+        return $this->fetch();
+    }
 }
 ?>
