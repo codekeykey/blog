@@ -43,16 +43,17 @@
     </div>
     <!-- banner代码 结束 -->
     <div class="topnews">
-      <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
-      {for start='0' end='7'}
+      <h2><b>文章</b>列表</h2>
+      {foreach $data as $val}
       <div class="blogs">
-        <figure><img src="{$Think.const.DS}uploads{$Think.const.DS}{$advice_data[$i]['image']}"></figure>
+        <figure><img src="{$Think.const.DS}uploads{$Think.const.DS}{$val['image']}"></figure>
         <ul>
-          <h3><a href="/fg/index/detail?id={$advice_data[$i]['id']}">{$advice_data[$i]['title']}</a></h3>
-          <p>{$advice_data[$i]['content']|mb_substr=###,0,130}..</p>
-          <p class="autor"><span class="lm f_l"><a href="/">{$advice_data[$i]['tag']}</a></span><span class="dtime f_l">{$advice_data[$i]['create_time']|date="Y-m-d",###}</span><span class="viewnum f_r">浏览（<a href="/">{$advice_data[$i]['times']}</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+          <h3><a href="/fg/index/detail?id={$val['id']}">{$val['title']}</a></h3>
+          <p>{$val['content']|mb_substr=###,0,130}..</p>
+          <p class="autor"><span class="lm f_l"><a href="/">{$val['tag']}</a></span><span class="dtime f_l">{$val['create_time']|date="Y-m-d",###}</span><span class="viewnum f_r">浏览（<a href="/">{$val['times']}</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
         </ul>
       </div>
-      {/for}
+      {/foreach}
+      {$fpage}
     </div>
   </div>
