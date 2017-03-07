@@ -72,20 +72,9 @@ window.onload = function ()
   <div class="cloud">
     <h3>标签云</h3>
     <ul>
-      <li><a href="/">个人博客</a></li>
-      <li><a href="/">web开发</a></li>
-      <li><a href="/">前端设计</a></li>
-      <li><a href="/">Html</a></li>
-      <li><a href="/">CSS3</a></li>
-      <li><a href="/">Html5+css3</a></li>
-      <li><a href="/">百度</a></li>
-      <li><a href="/">Javasript</a></li>
-      <li><a href="/">web开发</a></li>
-      <li><a href="/">前端设计</a></li>
-      <li><a href="/">Html</a></li>
-      <li><a href="/">CSS3</a></li>
-      <li><a href="/">Html5+css3</a></li>
-      <li><a href="http://www.baidu.com">百度</a></li>
+        {for start="0" end="7"}
+            <li><a href="/fg/index/taglist?tag={$tag[$i]['tag']}">{$tag[$i]['tag']}</a></li>
+        {/for}
     </ul>
   </div>
   <div class="tuwen">

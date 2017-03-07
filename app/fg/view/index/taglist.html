@@ -43,7 +43,7 @@
     </div>
     <!-- banner代码 结束 -->
     <div class="topnews">
-      <h2><span><a href="/fg/index/taglist?tag={$tag[0]['tag']}" target="">{$tag[0]['tag']}</a><a href="/fg/index/taglist?tag={$tag[1]['tag']}" target="">{$tag[1]['tag']}</a><a href="/fg/index/taglist?tag={$tag[2]['tag']}" target="">{$tag[2]['tag']}</a></span><b>文章</b>推荐</h2>
+      <h2><b>{$data[0]['tag']}</b></h2>
       {for start='0' end='7'}
       <div class="blogs">
         <figure><img src="{$Think.const.DS}uploads{$Think.const.DS}{$advice_data[$i]['image']}"></figure>
@@ -54,5 +54,6 @@
         </ul>
       </div>
       {/for}
+      {$fpage}
     </div>
   </div>
