@@ -50,7 +50,7 @@
         <ul>
           <h3><a href="/fg/index/detail?id={$data[$i]['id']}">{$data[$i]['title']}</a></h3>
           <p>{$data[$i]['content']|mb_substr=###,0,130}..</p>
-          <p class="autor"><span class="lm f_l"><a href="/">{$data[$i]['tag']}</a></span><span class="dtime f_l">{$data[$i]['create_time']|date="Y-m-d",###}</span><span class="viewnum f_r">浏览（<a href="/">{$data[$i]['times']}</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+          <p class="autor"><span class="lm f_l"><a href="/">{$data[$i]['tag']}</a></span><span class="dtime f_l">{$data[$i]['create_time']|date="Y-m-d",###}</span><span class="viewnum f_r">浏览（<a href="#">{$data[$i]['times']}</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
         </ul>
       </div>
       {/for}

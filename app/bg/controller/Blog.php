@@ -5,9 +5,18 @@ use think\Controller;
 class Blog extends controller{
 
     public function index() {
-        $count = \think\Db::Table('blog')->count();
-        $page = new \library\api\Page($count);
-        $info = \think\Db::Table('blog')->limit($page->limit)->select();
+        $data = input('get.', '');
+        if (count($data) != 0) {
+            $label = $data['label'];
+            $content = $data['content'];
+            $count = \think\Db::Table('blog')->where("tag like '%$label%' and title like '%$content%'")->count();
+            $page = new \library\api\Page($count);
+            $info = \think\Db::Table('blog')->where("tag like '%$label%' and title like '%$content%'")->limit($page->limit)->select();
+        }else{
+            $count = \think\Db::Table('blog')->count();
+            $page = new \library\api\Page($count);
+            $info = \think\Db::Table('blog')->limit($page->limit)->select();
+        }
         $feyepage = $page->fpage();
         $this->assign('info', $info);
         $this->assign('page', $feyepage);

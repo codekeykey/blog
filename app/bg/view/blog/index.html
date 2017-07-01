@@ -24,17 +24,12 @@
 <div class="pd-20">
     <div class="text-c">
         <form class="Huiform" method="post" action="" target="_self">
-            <input type="text" placeholder="分类名称" value="" class="input-text" style="width:120px">
-            <input type="text" class="input-text upload-url" placeholder="品牌LOGO">
-            <span class="btn-upload"><a class="btn btn-default radius" href="javascript:void();" style="z-index:2;">浏览</a><input type="file" class="input-file" id="" name="" multiple></span>
-            <select class="select" name="brandclass" size="1" style="width:120px">
-                <option value="1" selected>国内品牌</option>
-                <option value="0">国外品牌</option>
-            </select>
-            <input type="button" class="btn radius btn-primary" value="添加品牌">
+            <input type="text" placeholder="标签" id="label" class="input-text" style="width:120px"></input>
+            <input type="text" class="input-text upload-url" id="content" placeholder="标题"></input>
+            <input type="button" class="btn radius btn-primary" value="搜索" id="search"></input>
         </form>
     </div>
- <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="/bg/blog/index" onClick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+ <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="/bg/blog/index" onClick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a></span>  </div>
     <table class="table table-border table-bordered table-bg table-sort">
         <thead>
             <tr class="text-c">
@@ -76,6 +71,20 @@
                 return false;
             }
         });
+
+
+        $("#search").click(function(){
+            $label = $("#label").val();
+            $content = $("#content").val();
+            if ($label==null||$label=="") {
+                if ($content==null||$content=="") {
+                    window.alert("没有输入搜索的字符串");
+                    return false;
+                }
+            }
+            $(location).attr('href', '/bg/blog/index?label='+$label+'&content='+$content);
+        });
+
 </script>
 </body>
 </html>

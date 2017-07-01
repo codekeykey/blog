@@ -79,5 +79,19 @@ class Index extends controller {
         $this->assign('fpage', $fpage);
         return $this->fetch();
     }
+
+
+    public function info(){
+        $user = \think\Db::Table('admin')->find();
+        $advice_data = \think\Db::Table('blog')->order("times desc")->select();
+        $new_data = \think\Db::Table('blog')->order("create_time desc")->select();
+        $tag = \think\Db::Table('blog')->field('tag,count(tag)')->group('tag')->order('count(tag) desc')->select();
+        $this->assign('user', $user);
+        $this->assign('advice_data', $advice_data);
+        $this->assign('new_data', $new_data);
+        $this->assign('tag', $tag);
+        $this->assign('data', $advice_data);
+        return $this->fetch();
+    }
 }
 ?>
