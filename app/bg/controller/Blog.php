@@ -6,7 +6,7 @@ class Blog extends controller{
 
     public function index() {
         $data = input('get.', '');
-        if (count($data) != 0) {
+        if (isset($data['label']) || isset($data['content'])) {
             $label = $data['label'];
             $content = $data['content'];
             $count = \think\Db::Table('blog')->where("tag like '%$label%' and title like '%$content%'")->count();

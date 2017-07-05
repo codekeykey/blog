@@ -99,7 +99,14 @@ window.onload = function ()
 </article>
 <footer>
   <p class="ft-copyright">我的博客 Design by DanceSmile 杭ICP备11002373号-1</p>
-  <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+  <div id="tbox"> <a id="togbook" href="/fg/index/index"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
 </footer>
 </body>
+<script type="text/JavaScript">
+$(function(){
+  $("#gotop").click(function() {
+      $("html,body").animate({scrollTop:0}, 500);
+  });
+ })
+</script>
 </html>

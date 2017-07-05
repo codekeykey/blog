@@ -156,7 +156,7 @@ return [
     // 显示错误信息
     'show_error_msg'         => false,
     // 异常处理handle类 留空使用 \think\exception\Handle
-    'exception_handle'       => '',
+    'exception_handle'       => '\\app\\fg\\common\\exception\\Http',
 
     // +----------------------------------------------------------------------
     // | 日志设置
@@ -168,7 +168,9 @@ return [
         // 日志保存目录
         'path'  => LOG_PATH,
         // 日志记录级别
-        'level' => [],
+        'level' => ['error', 'notice'],
+        // 日志时间格式
+        'time_format' => ' Y-m-d (H:i:s)'
     ],
 
     // +----------------------------------------------------------------------

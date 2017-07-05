@@ -50,6 +50,8 @@
         <ul>
           <p>{$info_id['content']}</p>
           <p class="autor"><span class="lm f_l"><a href="/">{$info_id['tag']}</a></span><span class="dtime f_l">{$info_id['create_time']|date="Y-m-d",###}</span><span class="viewnum f_r">浏览（<a href="/">{$info_id['times']}</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+          <li><a href="/fg/index/detail?id={$info_previous[0]['id']?:1}"><img src="/static/images/previous.png" style="display:inline;"></img><span style="display:inline;font-size:10px">{$info_previous[0]['title']?:"没有上一篇"}</span></a></li>
+          <li><a href="/fg/index/detail?id={$info_next[0]['id']?:1}"><img src="/static/images/next2.png" style="display:inline;"></img><span style="display:inline;">{$info_next[0]['title']?:"没有下一篇"}</span></a></li>
         </ul>
       </div>
     </div>

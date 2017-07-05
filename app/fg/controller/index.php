@@ -21,6 +21,10 @@ class Index extends controller {
     public function detail(){
         !IS_GET && $this->redirect("/fg/index/index");
         $id = input('get.id', 0);
+        $sql_next = "SELECT * FROM blog WHERE id>$id ORDER BY id ASC LIMIT 0,1";
+        $sql_previous = "SELECT * FROM blog WHERE id<$id ORDER BY id DESC LIMIT 0,1";
+        $info_next = \think\Db::query($sql_next);
+        $info_previous = \think\Db::query($sql_previous);
         $data_id = \think\Db::Table('blog')->find($id);
         $user = \think\Db::Table('admin')->find();
         $advice_data = \think\Db::Table('blog')->order("times desc")->select();
@@ -37,6 +41,8 @@ class Index extends controller {
         $this->assign('advice_data', $advice_data);
         $this->assign('new_data', $new_data);
         $this->assign('tag', $tag);
+        $this->assign('info_next', $info_next);
+        $this->assign('info_previous', $info_previous);
         return $this->fetch();
     }
 
